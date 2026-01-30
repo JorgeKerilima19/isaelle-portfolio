@@ -13,11 +13,11 @@ export const Hero = async ({
 
   return (
     <section className="flex items-center justify-between h-screen">
-      <div className="h-full w-2/4 flex flex-col gap-16 p-16 items-center justify-center bg-letter">
-        <h1 className="text-[7rem] font-bold text-primary">Isaelle</h1>
+      <div className="h-full w-2/4 flex flex-col gap-24 items-center justify-center bg-letter">
+        <h1 className="text-[7rem] font-bold text-primary">Isaelle Costa</h1>
         <div className="grid gap-4">
-          <h2 className="text-[2rem] font-bold">{t("greeting")}</h2>
-          <p className="text-[3rem] font-light">{t("description")}</p>
+          <h2 className="text-[1.6rem] font-bold text-center">{t("greeting")}</h2>
+          <p className="text-[1.85rem] font-light max-w-4xl text-center">{t("description")}</p>
         </div>
         <div className="flex gap-16">
           <button className="text-[1.8rem] border border-gray-950 py-4 px-12 bg-gray-100 text-gray-950 hover:bg-gray-900 transition duration-300 hover:text-gray-100">

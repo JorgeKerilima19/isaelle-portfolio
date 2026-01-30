@@ -1,9 +1,15 @@
 {
   "home": {
     "title": "Bem-vindo",
-    "description": "Eu sou professora de letras em espanhol e português.",
     "greeting": "Oí gente!",
+    "description": "Sou professora de Literatura Espanhola e Portuguesa, apaixonada por palavras, leitura e diálogo intercultural. Acredito no ensino como um espaço de encontro, reflexão e prazer, onde a literatura se torna uma ferramenta para a compreensão do mundo e de nós mesmos.",
     "button1": "Contato",
     "button2": "Sobre Mim"
+  },
+  "navbar": {
+    "home": "Início",
+    "blog": "Blog",
+    "about": "Sobre Mim",
+    "contact": "Contato"
   }
 }

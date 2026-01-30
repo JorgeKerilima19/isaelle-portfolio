@@ -1,6 +1,7 @@
 // app/[locale]/layout.tsx
 import { Metadata } from "next";
 import { locales } from "../../i18n";
+import { Navbar } from "@/components";
 
 export async function generateMetadata({
   params,
@@ -21,10 +22,14 @@ export async function generateMetadata({
   };
 }
 
-export default function LocaleLayout({
+export default async function LocaleLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
+
   return <>{children}</>;
 }

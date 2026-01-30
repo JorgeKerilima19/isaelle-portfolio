@@ -1,9 +1,15 @@
 {
   "home": {
     "title": "Bienvenido",
-    "description": "Soy profesora de literatura española y portuguesa.",
-    "greeting":"Hola a todos!",
+    "greeting": "Hola a todos!",
+    "description": "Soy profesora de literatura española y portuguesa, apasionada por las palabras, la lectura y el diálogo entre culturas. Creo en la enseñanza como un espacio de encuentro, reflexión y disfrute, donde la literatura se convierte en una herramienta para comprender el mundo y a nosotros mismos.",
     "button1": "Contacto",
     "button2": "Sobre Mi"
+  },
+  "navbar": {
+    "home": "Inicio",
+    "blog": "Blog",
+    "about": "Sobre Mí",
+    "contact": "Contacto"
   }
 }

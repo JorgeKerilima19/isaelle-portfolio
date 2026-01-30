@@ -1,5 +1,5 @@
 // app/[locale]/page.tsx
-import { Hero } from "@/components";
+import { Hero,Navbar } from "@/components";
 import { getTranslations } from "next-intl/server";
 
 export async function generateStaticParams() {
@@ -21,13 +21,29 @@ export default async function Home({
 }: {
   params: Promise<{ locale: string }>;
 }) {
+  // Keep params as Promise, await once
   const { locale } = await params;
 
-  const t = await getTranslations({ locale, namespace: "home" });
+  // Fetch BOTH home and navbar translations on server
+  const homeT = await getTranslations({ locale, namespace: "home" });
+  const navbarT = await getTranslations({ locale, namespace: "navbar" });
 
   return (
-    <main className="">
-      <Hero params={params} />
-    </main>
+    <>
+      {/* Pass translated strings directly */}
+      <Navbar 
+        locale={locale}
+        navItems={{
+          home: navbarT('home'),
+          blog: navbarT('blog'),
+          about: navbarT('about'),
+          contact: navbarT('contact')
+        }}
+      />
+      <main className="pt-24 bg-letter">
+        {/* Hero still uses its own translation logic */}
+        <Hero params={params} />
+      </main>
+    </>
   );
 }
