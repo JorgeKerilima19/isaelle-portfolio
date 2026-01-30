@@ -1,0 +1,9 @@
+{
+  "home": {
+    "title": "Bienvenido",
+    "description": "Soy profesora de literatura española y portuguesa.",
+    "greeting":"Hola a todos!",
+    "button1": "Contacto",
+    "button2": "Sobre Mi"
+  }
+}
