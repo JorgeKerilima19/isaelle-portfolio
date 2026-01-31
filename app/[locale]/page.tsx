@@ -1,19 +1,9 @@
 // app/[locale]/page.tsx
-import { Hero,Navbar } from "@/components";
+import { Hero, Navbar, Welcome } from "@/components";
 import { getTranslations } from "next-intl/server";
 
 export async function generateStaticParams() {
   return [{ locale: "es" }, { locale: "pt" }];
-}
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
-  const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "home" });
-  return { title: t("title") };
 }
 
 export default async function Home({
@@ -21,28 +11,37 @@ export default async function Home({
 }: {
   params: Promise<{ locale: string }>;
 }) {
-  // Keep params as Promise, await once
   const { locale } = await params;
 
-  // Fetch BOTH home and navbar translations on server
   const homeT = await getTranslations({ locale, namespace: "home" });
   const navbarT = await getTranslations({ locale, namespace: "navbar" });
+  const welcomeT = await getTranslations({ locale, namespace: "welcome" });
+
+  const cards = [
+    { title: welcomeT("card1_title"), content: welcomeT("card1_content") },
+    { title: welcomeT("card2_title"), content: welcomeT("card2_content") },
+    { title: welcomeT("card3_title"), content: welcomeT("card3_content") },
+    { title: welcomeT("card4_title"), content: welcomeT("card4_content") },
+  ];
 
   return (
     <>
-      {/* Pass translated strings directly */}
-      <Navbar 
+      <Navbar
         locale={locale}
         navItems={{
-          home: navbarT('home'),
-          blog: navbarT('blog'),
-          about: navbarT('about'),
-          contact: navbarT('contact')
+          home: navbarT("home"),
+          blog: navbarT("blog"),
+          about: navbarT("about"),
+          contact: navbarT("contact"),
         }}
       />
-      <main className="pt-24 bg-letter">
-        {/* Hero still uses its own translation logic */}
+      <main className="pt-24">
         <Hero params={params} />
+        <Welcome
+          title={welcomeT("title")}
+          paragraph1={welcomeT("paragraph1")}
+          cards={cards}
+        />
       </main>
     </>
   );

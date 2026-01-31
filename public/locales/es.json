@@ -11,5 +11,23 @@
     "blog": "Blog",
     "about": "Sobre Mí",
     "contact": "Contacto"
+  },
+  "welcome": {
+    "title": "Educación y Carrera",
+    "paragraph1": "Soy profesora de Lengua y Literatura Portuguesa y Española, con formación universitaria en Letras y Estudios Literarios, dedicada a la enseñanza e investigación de las lenguas y culturas iberorrománicas. Mi trayectoria académica me ha permitido desarrollar un enfoque docente sólido y sensible, que combina rigor teórico, lectura crítica y práctica pedagógica.\nCreo en la literatura como espacio de reflexión, diálogo intercultural y construcción de pensamiento, y en la enseñanza como un proceso vivo, atento a las singularidades de cada estudiante. \nEn este espacio, comparto mi trayectoria, mi forma de enseñar y los proyectos que conectan lengua, literatura y cultura.",
+
+    "card1_title": "Formación Académica",
+    "card1_content": "Estudios de Letras, Lengua Portuguesa, Lengua y Literatura Española, con especialización en análisis literario, lingüística y estudios culturales.",
+
+    "card2_title": "Áreas de Especialización",
+    "card2_content": "Enseñanza de Portugués y Español, lectura crítica, Interpretación de textos literarios e intercambio cultural entre lenguas.",
+
+    "card3_title": "Metodología",
+
+    "card3_content": "Enseñanza basada en el diálogo, la reflexión crítica y la conexión entre la literatura, el contexto histórico y la realidad contemporánea.",
+
+    "card4_title": "Cultura y Lengua",
+
+    "card4_content": "La lengua entendida como expresión cultural, identidad y puente entre diferentes mundos y tradiciones literarias."
   }
 }
