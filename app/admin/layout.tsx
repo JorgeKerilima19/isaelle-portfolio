@@ -2,6 +2,7 @@
 "use client";
 
 import { logout } from "@/actions/logout";
+import Link from "next/link";
 import { useFormState } from "react-dom";
 
 function LogoutButton() {
@@ -27,7 +28,15 @@ export default function AdminLayout({
   return (
     <div className="min-h-screen bg-gray-100">
       <header className="bg-primary text-white p-4 flex items-center">
-        <h1 className="text-xl font-bold">Panel de Administración</h1>
+        <nav className="mt-6 space-y-2">
+          <Link
+            href="/admin/projects"
+            className="block px-4 py-2 text-gray-700 hover:bg-gray-200 rounded"
+          >
+            Proyectos
+          </Link>
+          {/* Add Blog later */}
+        </nav>
         <LogoutButton />
       </header>
       <main className="p-6">{children}</main>
