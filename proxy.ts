@@ -1,42 +1,54 @@
 // proxy.ts
-import createMiddleware from "next-intl/middleware";
-import { NextRequest } from "next/server";
+import { cookies } from "next/headers";
+import { jwtVerify } from "jose";
+import createIntlMiddleware from "next-intl/middleware";
+import { NextRequest, NextResponse } from "next/server";
 import { locales, defaultLocale } from "./i18n";
 
-const intlMiddleware = createMiddleware({
-  locales,
-  defaultLocale,
-});
+const intlMiddleware = createIntlMiddleware({ locales, defaultLocale });
+const secret = new TextEncoder().encode(process.env.AUTH_SECRET);
 
-export default async function middleware(req: NextRequest) {
-  const pathname = req.nextUrl.pathname;
+export async function proxy(req: NextRequest) {
+  const { pathname } = req.nextUrl;
 
-  // Skip validation for non-localized paths (e.g., /api, /_next)
-  if (pathname.startsWith("/api") || pathname.startsWith("/_next")) {
+  // Skip for static assets
+  if (pathname.startsWith("/_next") || pathname.startsWith("/api/auth")) {
     return intlMiddleware(req);
   }
 
-  // Extract locale from path: /es/... → "es"
-  const locale = pathname.split("/")[1];
-
-  // Validate locale
-  if (locale && !locales.includes(locale as any)) {
-    // Redirect invalid locale to default
-    const url = req.nextUrl.clone();
-    url.pathname = `/${defaultLocale}${pathname}`;
-    return Response.redirect(url);
+  // Public routes: no auth required
+  if (pathname === "/login" || pathname === "/register") {
+    return NextResponse.next();
   }
 
-  // If no locale in path, redirect to default
-  if (!locale || !locales.includes(locale as any)) {
-    const url = req.nextUrl.clone();
-    url.pathname = `/${defaultLocale}${pathname}`;
-    return Response.redirect(url);
+  // ✅ Admin routes: NO i18n, always at /admin
+  if (pathname.startsWith("/admin")) {
+    const sessionToken = (await cookies()).get(
+      "next-auth.session-token",
+    )?.value;
+
+    let isAdmin = false;
+    if (sessionToken) {
+      try {
+        const { payload } = await jwtVerify(sessionToken, secret);
+        isAdmin = payload.role === "admin";
+      } catch (error) {
+        isAdmin = false;
+      }
+    }
+
+    if (!isAdmin) {
+      const url = new URL("/login", req.nextUrl.origin);
+      url.searchParams.set("callbackUrl", pathname);
+      return NextResponse.redirect(url);
+    }
+
+    return NextResponse.next();
   }
 
   return intlMiddleware(req);
 }
 
 export const config = {
-  matcher: ["/", "/(es|pt)/:path*"],
+  matcher: ["/", "/(es|pt)/:path*", "/admin/:path*", "/login", "/register"],
 };

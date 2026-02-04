@@ -23,11 +23,12 @@
     "card2_content": "Enseñanza de Portugués y Español, lectura crítica, Interpretación de textos literarios e intercambio cultural entre lenguas.",
 
     "card3_title": "Metodología",
-
     "card3_content": "Enseñanza basada en el diálogo, la reflexión crítica y la conexión entre la literatura, el contexto histórico y la realidad contemporánea.",
 
     "card4_title": "Cultura y Lengua",
-
     "card4_content": "La lengua entendida como expresión cultural, identidad y puente entre diferentes mundos y tradiciones literarias."
+  },
+  "projects": {
+    "title": "Proyectos académicos"
   }
 }

@@ -1,5 +1,5 @@
 // app/[locale]/page.tsx
-import { Hero, Navbar, Welcome } from "@/components";
+import { Hero, Navbar, Projects, Welcome } from "@/components";
 import { getTranslations } from "next-intl/server";
 
 export async function generateStaticParams() {
@@ -24,6 +24,8 @@ export default async function Home({
     { title: welcomeT("card4_title"), content: welcomeT("card4_content") },
   ];
 
+  const projectT = await getTranslations({ locale, namespace: "projects" });
+
   return (
     <>
       <Navbar
@@ -42,6 +44,7 @@ export default async function Home({
           paragraph1={welcomeT("paragraph1")}
           cards={cards}
         />
+        <Projects title={projectT("title")} />
       </main>
     </>
   );

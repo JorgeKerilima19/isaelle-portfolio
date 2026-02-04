@@ -1,0 +1,70 @@
+// prisma/schema.prisma
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  name      String?
+  password  String
+  role      String   @default("user")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  blogPosts BlogPost[]
+  projects  Project[]
+}
+
+model BlogPost {
+  id        String   @id @default(uuid())
+  slug      String
+  locale    String
+  title     String
+  excerpt   String?
+  content   String
+  published Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  authorId String
+  author   User   @relation(fields: [authorId], references: [id], onDelete: Cascade)
+
+  sourcePostId String? // points to original post
+  sourcePost   BlogPost? @relation("BlogPostTranslations", fields: [sourcePostId], references: [id])
+
+  translations BlogPost[] @relation("BlogPostTranslations")
+
+  @@unique([slug, locale])
+  @@index([sourcePostId])
+  @@index([authorId])
+}
+
+model Project {
+  id          String   @id @default(uuid())
+  slug        String
+  locale      String
+  title       String
+  description String
+  year        Int?
+  link        String?
+  published   Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  ownerId String
+  owner   User   @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+
+  sourceProjectId String?
+  sourceProject   Project? @relation("ProjectTranslations", fields: [sourceProjectId], references: [id])
+
+  translations Project[] @relation("ProjectTranslations")
+
+  @@unique([slug, locale])
+  @@index([sourceProjectId])
+  @@index([ownerId])
+}
