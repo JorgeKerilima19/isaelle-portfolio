@@ -25,3 +25,48 @@ body {
   --color-letter: #e8f3f5;
   --color-secondary: #0a4ba1;
 }
+
+/* Custom rich text editor styles */
+.prose-amber h1 {
+  @apply text-2xl font-bold text-[#055b2c] mt-6 mb-4;
+}
+
+.prose-amber h2 {
+  @apply text-xl font-semibold text-[#055b2c] mt-5 mb-3;
+}
+
+.prose-amber h3 {
+  @apply text-lg font-medium text-[#055b2c] mt-4 mb-2;
+}
+
+.prose-amber p {
+  @apply mb-4 leading-relaxed;
+}
+
+.prose-amber ul {
+  @apply list-disc pl-6 mb-4 space-y-1;
+}
+
+.prose-amber ol {
+  @apply list-decimal pl-6 mb-4 space-y-1;
+}
+
+.prose-amber li {
+  @apply ml-2;
+}
+
+.prose-amber a {
+  @apply text-amber-500 underline hover:text-amber-600;
+}
+
+.prose-amber img {
+  @apply my-4 rounded-lg max-w-full h-auto;
+}
+
+.prose-amber strong {
+  @apply font-bold;
+}
+
+.prose-amber em {
+  @apply italic;
+}

@@ -210,12 +210,8 @@ export default function RichTextEditor({
       <div
         ref={editorRef}
         contentEditable
-        className="min-h-75 p-4 border border-t-0 border-gray-300 rounded-b-md outline-none"
+        className="min-h-75 p-4 border border-t-0 border-gray-300 rounded-b-md outline-none prose prose-amber max-w-none"
         onInput={handleInput}
-        style={{
-          lineHeight: "1.6",
-          fontFamily: "system-ui, -apple-system, sans-serif",
-        }}
       />
 
       {/* Hidden file input */}
