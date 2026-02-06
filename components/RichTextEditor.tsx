@@ -13,10 +13,10 @@ export default function RichTextEditor({
   initialValue = "",
 }: RichTextEditorProps) {
   const [content, setContent] = useState(initialValue);
+  const [uploadError, setUploadError] = useState<string | null>(null);
   const editorRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  // Initialize content
   useEffect(() => {
     if (initialValue && editorRef.current) {
       editorRef.current.innerHTML = initialValue;
@@ -26,6 +26,7 @@ export default function RichTextEditor({
   const handleInput = () => {
     if (editorRef.current) {
       setContent(editorRef.current.innerHTML);
+      setUploadError(null);
     }
   };
 
@@ -51,18 +52,21 @@ export default function RichTextEditor({
     const file = e.target.files?.[0];
     if (!file) return;
 
+    if (file.size > 2 * 1024 * 1024) {
+      setUploadError("La imagen es demasiado grande. Máximo 2MB.");
+      return;
+    }
+
     // Validate file type
     if (!file.type.startsWith("image/")) {
-      alert("Por favor, seleccione un archivo de imagen válido");
+      setUploadError("Por favor, seleccione un archivo de imagen válido");
       return;
     }
 
     try {
-      // Create FormData for upload
       const formData = new FormData();
       formData.append("image", file);
 
-      // Upload to your server endpoint
       const response = await fetch("/api/upload", {
         method: "POST",
         body: formData,
@@ -75,10 +79,7 @@ export default function RichTextEditor({
       const data = await response.json();
 
       if (data.url) {
-        // Insert image into editor
         execCommand("insertImage", data.url);
-
-        // Optional: Add alt text
         const imgElements =
           editorRef.current?.getElementsByTagName("img") || [];
         const lastImg = imgElements[imgElements.length - 1];
@@ -88,9 +89,10 @@ export default function RichTextEditor({
       }
     } catch (error) {
       console.error("Upload error:", error);
-      alert("Error al subir la imagen. Por favor, inténtelo de nuevo.");
+      setUploadError(
+        "Error al subir la imagen. Por favor, inténtelo de nuevo.",
+      );
     } finally {
-      // Reset file input
       if (fileInputRef.current) {
         fileInputRef.current.value = "";
       }
@@ -212,7 +214,16 @@ export default function RichTextEditor({
         contentEditable
         className="min-h-75 p-4 border border-t-0 border-gray-300 rounded-b-md outline-none prose prose-amber max-w-none"
         onInput={handleInput}
+        style={{
+          lineHeight: "1.6",
+          fontFamily: "system-ui, -apple-system, sans-serif",
+        }}
       />
+
+      {/* Upload error message */}
+      {uploadError && (
+        <div className="mt-2 text-red-600 text-sm">{uploadError}</div>
+      )}
 
       {/* Hidden file input */}
       <input

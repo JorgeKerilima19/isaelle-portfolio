@@ -13,24 +13,23 @@ export async function POST(request: NextRequest) {
       return Response.json({ error: "No file provided" }, { status: 400 });
     }
 
+    if (file.size > 2 * 1024 * 1024) {
+      return Response.json({ error: "File too large" }, { status: 400 });
+    }
+
     const validTypes = ["image/jpeg", "image/png", "image/gif", "image/webp"];
     if (!validTypes.includes(file.type)) {
       return Response.json({ error: "Invalid file type" }, { status: 400 });
     }
 
-    // Convert to buffer
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
-
-    // Generate filename
     const ext = file.name.split(".").pop()?.toLowerCase() || "jpg";
     const filename = `${nanoid()}.${ext}`;
     const filepath = join(process.cwd(), "public", "uploads", filename);
 
-    // Save file
     await writeFile(filepath, buffer);
 
-    // Return URL
     return Response.json({
       url: `/uploads/${filename}`,
       success: true,
