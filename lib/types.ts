@@ -11,3 +11,17 @@ export type Project = {
   imageUrl: string | null;
   link: string | null;
 };
+
+export type BlogPost = {
+  id: string;
+  slug: string;
+  locale: string;
+  title: string;
+  excerpt: string | null;
+  content: string;
+  published: boolean;
+  imageUrl: string | null;
+  link: string | null;
+  createdAt: Date;
+  updatedAt: Date;
+};

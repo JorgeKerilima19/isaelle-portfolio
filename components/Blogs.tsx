@@ -1,4 +1,4 @@
-// components/Projects.tsx
+// components/Blogs.tsx
 "use client";
 
 import { useState, useEffect } from "react";
@@ -7,30 +7,30 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { ProjectCard } from "./subcomponents/ProjectCard";
-import type { Project } from "@/lib/types";
+import { BlogCard } from "./subcomponents/BlogCard";
+import type { BlogPost } from "@/lib/types";
 
-export const Projects = ({
+export const Blogs = ({
   title,
-  projects,
+  blogs,
 }: {
   title: string;
-  projects: Project[];
+  blogs: BlogPost[];
 }) => {
-  const [filteredProjects, setFilteredProjects] = useState<Project[]>(projects);
+  const [filteredBlogs, setFilteredBlogs] = useState<BlogPost[]>(blogs);
   const [selectedLanguage, setSelectedLanguage] = useState<"all" | "es" | "pt">(
     "all",
   );
 
   useEffect(() => {
     if (selectedLanguage === "all") {
-      setFilteredProjects(projects);
+      setFilteredBlogs(blogs);
     } else {
-      setFilteredProjects(
-        projects.filter((project) => project.locale === selectedLanguage),
+      setFilteredBlogs(
+        blogs.filter((blog) => blog.locale === selectedLanguage),
       );
     }
-  }, [selectedLanguage, projects]);
+  }, [selectedLanguage, blogs]);
 
   // Swiper breakpoints
   const breakpoints = {
@@ -40,13 +40,9 @@ export const Projects = ({
   };
 
   return (
-    <section className="px-16 sm:px-8 md:px-16">
-      <h2 className="text-5xl md:text-5xl font-bold text-primary mb-8">
-        {title}
-      </h2>
-
-      {/* Language Filter */}
-      <div className="flex flex-wrap gap-4 justify-center text-2xl">
+    <section className="section_container px-16 sm:px-8 py-32 mt-16">
+      <h2 className="text-5xl font-bold text-primary mb-16 mt-16">{title}</h2>
+      <div className="flex flex-wrap gap-4 text-2xl justify-center">
         <button
           onClick={() => setSelectedLanguage("all")}
           className={`px-4 py-2 rounded-full transition-colors ${
@@ -79,7 +75,8 @@ export const Projects = ({
         </button>
       </div>
 
-      {filteredProjects.length > 0 ? (
+      {/* Blogs Slider */}
+      {filteredBlogs.length > 0 ? (
         <Swiper
           modules={[Navigation, Pagination]}
           spaceBetween={20}
@@ -87,17 +84,17 @@ export const Projects = ({
           breakpoints={breakpoints}
           navigation
           pagination={{ clickable: true }}
-          className="gap-2"
+          className="pb-12"
         >
-          {filteredProjects.map((project) => (
-            <SwiperSlide key={project.id}>
-              <ProjectCard project={project} />
+          {filteredBlogs.map((blog) => (
+            <SwiperSlide key={blog.id}>
+              <BlogCard blog={blog} />
             </SwiperSlide>
           ))}
         </Swiper>
       ) : (
         <p className="text-gray-500 text-center py-12">
-          No hay proyectos disponibles en este idioma.
+          No hay artículos disponibles en este idioma.
         </p>
       )}
     </section>

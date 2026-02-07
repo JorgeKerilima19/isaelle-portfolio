@@ -11,3 +11,20 @@
 .project_img {
   height: 15rem;
 }
+.blog_img{
+  height: 20rem;
+}
+.card-content{
+  h3{
+    font-size: 2.1rem;
+  }
+  span{
+    font-size: 1.6rem;
+  }
+  p{
+    font-size: 1.4rem;
+  }
+}
+.swiper-wrapper{
+  padding: 5rem 0;
+}

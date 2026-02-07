@@ -30,5 +30,8 @@
   },
   "projects": {
     "title": "Projetos acadêmicos"
+  },
+  "blog": {
+    "title": "Últimos Artigos do Blog"
   }
 }
