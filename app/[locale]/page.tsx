@@ -1,6 +1,8 @@
 // app/[locale]/page.tsx
 import { Hero, Navbar, Projects, Welcome } from "@/components";
 import { getTranslations } from "next-intl/server";
+import prisma from "@/lib/prisma";
+import type { Project } from "@/lib/types";
 
 export async function generateStaticParams() {
   return [{ locale: "es" }, { locale: "pt" }];
@@ -12,6 +14,11 @@ export default async function Home({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+
+  const allProjects: Project[] = await prisma.project.findMany({
+    where: { published: true },
+    orderBy: { year: "desc" },
+  });
 
   const homeT = await getTranslations({ locale, namespace: "home" });
   const navbarT = await getTranslations({ locale, namespace: "navbar" });
@@ -44,7 +51,7 @@ export default async function Home({
           paragraph1={welcomeT("paragraph1")}
           cards={cards}
         />
-        <Projects title={projectT("title")} />
+        <Projects title={projectT("title")} projects={allProjects} />
       </main>
     </>
   );
