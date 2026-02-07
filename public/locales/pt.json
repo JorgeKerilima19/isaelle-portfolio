@@ -33,5 +33,14 @@
   },
   "blog": {
     "title": "Últimos Artigos do Blog"
+  },
+  "footer": {
+    "about": "Sobre",
+    "description": "Professora e pesquisadora em literaturas e línguas ibero-românicas. Meu trabalho foca na leitura crítica, no diálogo intercultural e no desenvolvimento do pensamento através da literatura.",
+    "contact": "Contato",
+    "email": "isaelle@example.com",
+    "academic": "Departamento de Letras e Estudos Literários",
+    "languages": "Idiomas",
+    "copyright": "Todos os direitos reservados"
   }
 }
