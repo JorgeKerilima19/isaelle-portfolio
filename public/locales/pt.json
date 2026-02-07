@@ -42,5 +42,22 @@
     "academic": "Departamento de Letras e Estudos Literários",
     "languages": "Idiomas",
     "copyright": "Todos os direitos reservados"
+  },
+  "collaboration": {
+    "title": "Colaboração Acadêmica",
+    "subtitle": "Estou aberta a colaborações interdisciplinares que promovam o diálogo crítico e a pesquisa em literaturas ibero-românicas.",
+    "contact_info": "Informação de Contato",
+    "email_label": "Endereço de E-mail",
+    "institution_label": "Instituição",
+    "university": "Universidade de Letras e Estudos Literários",
+    "invitation_title": "Interessado em colaborar?",
+    "invitation_text": "Se o seu trabalho se alinha com minhas áreas de pesquisa ou está interessado em projetos conjuntos, não hesite em entrar em contato.",
+    "contact_button": "Enviar E-mail",
+    "areas_title": "Áreas de Colaboração",
+    "area1": "Literatura comparada ibero-românica",
+    "area2": "Teoria literária e crítica cultural",
+    "area3": "Estudos de tradução e transferência cultural",
+    "area4": "Pedagogia de línguas e literaturas",
+    "area5": "Projetos interculturais e diálogo acadêmico"
   }
 }

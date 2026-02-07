@@ -1,5 +1,13 @@
 // app/[locale]/page.tsx
-import { Hero, Navbar, Projects, Welcome, Blogs, Footer } from "@/components";
+import {
+  Hero,
+  Navbar,
+  Projects,
+  Welcome,
+  Blogs,
+  Footer,
+  AcademicCollaboration,
+} from "@/components";
 import { getTranslations } from "next-intl/server";
 import prisma from "@/lib/prisma";
 import type { Project, BlogPost } from "@/lib/types";
@@ -60,6 +68,7 @@ export default async function Home({
           cards={cards}
         />
         <Projects title={projectT("title")} projects={allProjects} />
+        <AcademicCollaboration />
         <Blogs title={blogT("title")} blogs={allBlogs} />
       </main>
       <Footer />

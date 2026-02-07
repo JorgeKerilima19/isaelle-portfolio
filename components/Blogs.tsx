@@ -40,7 +40,7 @@ export const Blogs = ({
   };
 
   return (
-    <section className="section_container px-16 sm:px-8 py-32 mt-16">
+    <section className="section_container px-16 sm:px-8 pb-32 pt-16">
       <h2 className="text-5xl font-bold text-primary mb-16 mt-16">{title}</h2>
       <div className="flex flex-wrap gap-4 text-2xl justify-center">
         <button

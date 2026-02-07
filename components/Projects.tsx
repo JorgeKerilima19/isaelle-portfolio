@@ -40,7 +40,7 @@ export const Projects = ({
   };
 
   return (
-    <section className="px-16 sm:px-8 md:px-16">
+    <section className="px-16 sm:px-8 md:px-16 py-16">
       <h2 className="text-5xl md:text-5xl font-bold text-primary mb-8">
         {title}
       </h2>
