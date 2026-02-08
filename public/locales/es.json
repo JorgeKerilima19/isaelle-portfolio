@@ -10,7 +10,8 @@
     "home": "Inicio",
     "blog": "Blog",
     "about": "Sobre Mí",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "projects":"Proyectos"
   },
   "welcome": {
     "title": "Educación y Carrera",
@@ -29,11 +30,19 @@
     "card4_content": "La lengua entendida como expresión cultural, identidad y puente entre diferentes mundos y tradiciones literarias."
   },
   "projects": {
-    "title": "Proyectos académicos"
+    "title": "Proyectos Académicos",
+    "description": "Investigaciones, publicaciones y trabajos académicos en literaturas ibero-romances.",
+    "no_projects": "No hay proyectos disponibles en este momento.",
+    "read_more": "Leer más",
+    "back_to_projects": "Volver a proyectos"
   },
 
   "blog": {
-    "title": "Últimos Artículos del Blog"
+    "title": "Blog Académico",
+    "description": "Reflexiones, investigaciones y pensamientos sobre literaturas ibero-romances y educación.",
+    "no_posts": "No hay artículos disponibles en este momento.",
+    "read_more": "Leer más",
+    "back_to_blog": "Volver al blog"
   },
   "footer": {
     "about": "Sobre",

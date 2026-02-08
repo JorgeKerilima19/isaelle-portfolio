@@ -1,7 +1,9 @@
 // app/[locale]/layout.tsx
 import { Metadata } from "next";
 import { locales } from "../../i18n";
-import { Navbar } from "@/components";
+import { Footer, Navbar } from "@/components";
+
+import { getTranslations } from "next-intl/server";
 
 export async function generateMetadata({
   params,
@@ -31,5 +33,23 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params;
 
-  return <>{children}</>;
+  const homeT = await getTranslations({ locale, namespace: "home" });
+  const navbarT = await getTranslations({ locale, namespace: "navbar" });
+
+  return (
+    <>
+      <Navbar
+        locale={locale}
+        navItems={{
+          home: navbarT("home"),
+          blog: navbarT("blog"),
+          about: navbarT("about"),
+          contact: navbarT("contact"),
+          projects: navbarT("projects")
+        }}
+      />
+      <main className="pt-24 bg-letter">{children}</main>
+      <Footer />
+    </>
+  );
 }

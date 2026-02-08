@@ -11,20 +11,26 @@
 .project_img {
   height: 15rem;
 }
-.blog_img{
+.blog_img {
   height: 20rem;
 }
-.card-content{
-  h3{
+.card-content {
+  h3 {
     font-size: 2.1rem;
   }
-  span{
+  span {
     font-size: 1.6rem;
   }
-  p{
+  p {
     font-size: 1.4rem;
   }
 }
-.swiper-wrapper{
+.swiper-wrapper {
   padding: 5rem 0;
+}
+.page_main_img {
+  height: 60vh;
+  width: 100%;
+  max-height: 45rem;
+  object-fit: cover;
 }

@@ -70,3 +70,67 @@ body {
 .prose-amber em {
   @apply italic;
 }
+.rich-content h1,
+.rich-content h2,
+.rich-content h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  color: #055b2c;
+}
+
+.rich-content p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.rich-content ul,
+.rich-content ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+}
+
+.rich-content li {
+  margin-bottom: 0.5rem;
+}
+
+.rich-content a {
+  color: #d97706;
+  text-decoration: underline;
+}
+
+.rich-content img {
+  max-width: 100%;
+  height: auto;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+}
+
+.rich-content blockquote {
+  border-left: 4px solid #d97706;
+  padding-left: 1rem;
+  margin: 1rem 0;
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* Prose styles override */
+.prose-amber h1 {
+  @apply text-3xl md:text-4xl font-bold text-[#055b2c] mt-8 mb-6;
+}
+
+.prose-amber h2 {
+  @apply text-2xl font-semibold text-[#055b2c] mt-6 mb-4;
+}
+
+.prose-amber h3 {
+  @apply text-xl font-medium text-[#055b2c] mt-5 mb-3;
+}
+
+.prose-amber p {
+  @apply mb-4 leading-relaxed text-gray-700;
+}
+
+.prose-amber a {
+  @apply text-amber-500 underline hover:text-amber-600;
+}

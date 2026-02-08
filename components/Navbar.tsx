@@ -12,6 +12,7 @@ type NavbarProps = {
     blog: string;
     about: string;
     contact: string;
+    projects: string;
   };
 };
 
@@ -32,15 +33,15 @@ export function Navbar({ locale, navItems }: NavbarProps) {
   return (
     <header>
       <div
-        className={`fixed left-0 right-0 z-50 transition-all duration-300 bg-letter ${
-          scrolled ? "top-0 bg-letter shadow-md" : "-top-12"
+        className={`fixed left-0 right-0 z-50 transition-all duration-300 bg-letter text-black ${
+          scrolled ? "top-0 bg-letter shadow-md" : ""
         }`}
       >
         <section className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
           <Link
             href={`/${locale}`}
             className={`text-[2rem] font-bold transition-colors 
-             ${scrolled ? "text-primary" : "text-white"}`}
+             ${scrolled ? "text-primary" : "text-black"}`}
           >
             Isaelle
           </Link>
@@ -52,7 +53,7 @@ export function Navbar({ locale, navItems }: NavbarProps) {
               className={`font-medium text-[1.5rem] transition-colors ${
                 scrolled
                   ? "text-primary hover:text-primary/90"
-                  : "text-white hover:text-white/90"
+                  : "text-black hover:text-white/90"
               }`}
             >
               {navItems.home}
@@ -63,7 +64,7 @@ export function Navbar({ locale, navItems }: NavbarProps) {
               className={`font-medium text-[1.5rem] transition-colors ${
                 scrolled
                   ? "text-primary hover:text-primary/90"
-                  : "text-white hover:text-white/90"
+                  : "text-black hover:text-white/90"
               }`}
             >
               {navItems.blog}
@@ -74,18 +75,28 @@ export function Navbar({ locale, navItems }: NavbarProps) {
               className={`font-medium text-[1.5rem] transition-colors ${
                 scrolled
                   ? "text-primary hover:text-primary/90"
-                  : "text-white hover:text-white/90"
+                  : "text-black hover:text-white/90"
               }`}
             >
               {navItems.about}
             </Link>
-
             <Link
-              href={`/${locale}/contact`}
+              href={`/${locale}/projects`}
               className={`font-medium text-[1.5rem] transition-colors ${
                 scrolled
                   ? "text-primary hover:text-primary/90"
-                  : "text-white hover:text-white/90"
+                  : "text-black hover:text-white/90"
+              }`}
+            >
+              {navItems.projects}
+            </Link>
+
+            <Link
+              href={`/${locale}/#contact`}
+              className={`font-medium text-[1.5rem] transition-colors ${
+                scrolled
+                  ? "text-primary hover:text-primary/90"
+                  : "text-black hover:text-white/90"
               }`}
             >
               {navItems.contact}

@@ -41,7 +41,7 @@ export async function createProjectAction(
         .replace(/-+/g, "-")
         .replace(/^-+|-+$/g, "") || "project";
 
-    const link = `/${locale}/proyectos/${slug}`;
+    const link = `/${locale}/projects/${slug}`;
 
     await prisma.project.create({
       data: {

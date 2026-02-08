@@ -14,7 +14,7 @@ export async function AcademicCollaboration() {
   ];
 
   return (
-    <div className=" bg-gray-50 ">
+    <div id="contact" className=" bg-gray-50 ">
       <section className="text-[1.5rem] p-16 bg-gray-50 mt-16">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-5xl font-bold text-primary my-12">

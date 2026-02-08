@@ -1,11 +1,9 @@
 // app/[locale]/page.tsx
 import {
   Hero,
-  Navbar,
   Projects,
   Welcome,
   Blogs,
-  Footer,
   AcademicCollaboration,
 } from "@/components";
 import { getTranslations } from "next-intl/server";
@@ -35,8 +33,6 @@ export default async function Home({
     orderBy: { createdAt: "desc" },
   });
 
-  const homeT = await getTranslations({ locale, namespace: "home" });
-  const navbarT = await getTranslations({ locale, namespace: "navbar" });
   const welcomeT = await getTranslations({ locale, namespace: "welcome" });
 
   const cards = [
@@ -51,27 +47,15 @@ export default async function Home({
 
   return (
     <>
-      <Navbar
-        locale={locale}
-        navItems={{
-          home: navbarT("home"),
-          blog: navbarT("blog"),
-          about: navbarT("about"),
-          contact: navbarT("contact"),
-        }}
+      <Hero params={params} />
+      <Welcome
+        title={welcomeT("title")}
+        paragraph1={welcomeT("paragraph1")}
+        cards={cards}
       />
-      <main className="pt-24 bg-letter">
-        <Hero params={params} />
-        <Welcome
-          title={welcomeT("title")}
-          paragraph1={welcomeT("paragraph1")}
-          cards={cards}
-        />
-        <Projects title={projectT("title")} projects={allProjects} />
-        <AcademicCollaboration />
-        <Blogs title={blogT("title")} blogs={allBlogs} />
-      </main>
-      <Footer />
+      <Projects title={projectT("title")} projects={allProjects} />
+      <AcademicCollaboration />
+      <Blogs title={blogT("title")} blogs={allBlogs} />
     </>
   );
 }
