@@ -12,7 +12,7 @@ type WelcomeProps = {
 export function Welcome({ title, paragraph1, cards }: WelcomeProps) {
   return (
     <div className=" bg-gray-50 ">
-      <section className="p-16 py-32   max-w-6xl mx-auto flex flex-col items-center gap-12 mt-24">
+      <section className="p-16 py-32  max-w-6xl mx-auto flex flex-col items-center gap-12 mt-24">
         <h2 className="text-5xl font-bold mb-8">{title}</h2>
 
         <p className="text-[1.6rem] text-center max-w-7xl whitespace-pre-line mb-16">

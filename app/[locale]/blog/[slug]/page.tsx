@@ -5,6 +5,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { BlogPost } from "@/lib/types";
 
+export const dynamic = "force-dynamic";
+
 export async function generateStaticParams() {
   // Generate paths for all published blog posts in both languages
   const posts = await prisma.blogPost.findMany({
@@ -12,7 +14,7 @@ export async function generateStaticParams() {
     select: { slug: true, locale: true },
   });
 
-  return posts.map((post) => ({
+  return posts.map((post: any) => ({
     locale: post.locale,
     slug: post.slug,
   }));
