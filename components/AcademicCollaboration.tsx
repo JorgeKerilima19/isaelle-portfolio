@@ -90,7 +90,7 @@ export async function AcademicCollaboration() {
               </h4>
               <p className="text-gray-600 mb-4">{t("invitation_text")}</p>
               <a
-                href="mailto:isaelle@example.com"
+                href="mailto:isaellecosta123@gmail.com"
                 className="inline-flex items-center px-6 py-3 bg-amber-500 hover:bg-amber-600 text-white rounded-md font-medium transition-colors"
               >
                 {t("contact_button")}
