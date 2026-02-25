@@ -1,6 +1,6 @@
 // lib/projects.ts
 import prisma from "@/lib/prisma";
-import { writeFile } from "fs/promises";
+import { mkdir, writeFile } from "fs/promises";
 import { join } from "path";
 import { nanoid } from "nanoid";
 
@@ -21,9 +21,13 @@ export async function uploadImage(file: File): Promise<string | null> {
     }
 
     const filename = `${nanoid()}.${ext}`;
-    const filepath = join(process.cwd(), "public", "uploads", filename);
 
+    const uploadDir = join(process.cwd(), "uploads");
+    await mkdir(uploadDir, { recursive: true });
+
+    const filepath = join(uploadDir, filename);
     await writeFile(filepath, buffer);
+
     return `/uploads/${filename}`;
   } catch (error) {
     console.error("Image upload error:", error);

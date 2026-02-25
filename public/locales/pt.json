@@ -1,8 +1,8 @@
 {
   "home": {
-    "title": "Bem-vindo",
-    "greeting": "Oí gente!",
-    "description": "Sou professora de Literatura Espanhola e Portuguesa, apaixonada por palavras, leitura e diálogo intercultural. Acredito no ensino como um espaço de encontro, reflexão e prazer, onde a literatura se torna uma ferramenta para a compreensão do mundo e de nós mesmos.",
+    "title": "Bem-vindo(a)",
+    "greeting": "Oi, gente!",
+    "description": "Sou professora de língua espanhola e portuguesa, apaixonada por palavras, leitura e diálogo intercultural. Acredito no ensino como um espaço de encontro, reflexão e prazer, em que as línguas se tornam uma ferramenta para a compreensão do mundo e de nós mesmos.",
     "button1": "Contato",
     "button2": "Sobre Mim"
   },
@@ -15,23 +15,23 @@
   },
   "welcome": {
     "title": "Educação e Carreira",
-    "paragraph1": "Sou professora de língua e literatura portuguesa e espanhola, com formação universitária nas áreas de Letras e Estudos Literários, dedicada ao ensino e à investigação das línguas e culturas ibero-românicas.\nA minha trajetória académica permitiu-me desenvolver uma abordagem sólida e sensível ao ensino, unindo rigor teórico, leitura crítica e prática pedagógica. Acredito na literatura como espaço de reflexão, diálogo intercultural e construção de pensamento, e no ensino como um processo vivo, atento às singularidades de cada estudante.\nNeste espaço, partilho o meu percurso, a minha forma de ensinar e os projetos que conectam língua, literatura e cultura.",
+    "paragraph1": "Sou professora de língua e literatura portuguesa e espanhola, com formação universitária na área de Letras Vernáculas com Língua Estrangeira Moderna – Espanhol, pela Universidade Federal da Bahia. Sou dedicada ao ensino e à investigação das línguas e da cultura latina.\nA minha trajetória acadêmica permitiu-me desenvolver uma abordagem sólida e sensível ao ensino, unindo rigor teórico, leitura crítica e prática pedagógica. Acredito no ensino como espaço de reflexão, diálogo intercultural e construção de pensamento, e no ensino como um processo vivo, atento às singularidades de cada estudante.\nNeste espaço, partilho o meu percurso, a minha forma de ensinar e os projetos que conectam língua, literatura e cultura.",
 
-    "card1_title": "Formação Académica",
-    "card1_content": "Estudos em Letras, Língua Portuguesa, Espanhola e Literatura, com enfoque em análise literária, linguística e estudos culturais.",
+    "card1_title": "Formação Acadêmica",
+    "card1_content": "Sou professora de língua e literatura portuguesa e espanhola, com formação universitária em Letras Vernáculas com Língua Estrangeira Moderna – Espanhol, pela Universidade Federal da Bahia (UFBA). Possuo nível C1 de espanhol, certificado pelo Instituto Cervantes.",
 
     "card2_title": "Áreas de Atuação",
-    "card2_content": "Ensino de língua portuguesa e espanhola, leitura crítica, interpretação de textos literários e aproximação cultural entre idiomas.",
+    "card2_content": "Atuação no ensino de Língua Portuguesa, Língua Espanhola como Língua Estrangeira (E/LE) e Língua Portuguesa para Estrangeiros (PLE).",
 
     "card3_title": "Metodologia",
-    "card3_content": "Ensino baseado no diálogo, na reflexão crítica e na conexão entre literatura, contexto histórico e realidade contemporânea.",
+    "card3_content": "Ensino pautado no diálogo, na reflexão crítica e na interculturalidade.",
 
     "card4_title": "Cultura & Língua",
-    "card4_content": "A língua entendida como expressão cultural, identidade e ponte entre diferentes mundos e tradições literárias."
+    "card4_content": "A língua entendida como expressão cultural, identidade e ponte entre diferentes mundos."
   },
   "projects": {
     "title": "Projetos Acadêmicos",
-    "description": "Pesquisas, publicações e trabalhos acadêmicos em literaturas ibero-românicas.",
+    "description": "Pesquisas, publicações e trabalhos acadêmicos.",
     "no_projects": "Não há projetos disponíveis no momento.",
     "read_more": "Ler mais",
     "back_to_projects": "Voltar aos projetos"
@@ -39,27 +39,26 @@
 
   "blog": {
     "title": "Blog Acadêmico",
-    "description": "Reflexões, pesquisas e pensamentos sobre literaturas ibero-românicas e educação.",
+    "description": "Escrita, língua, discurso e cultura: diálogos e atravessamentos.",
     "no_posts": "Não há artigos disponíveis no momento.",
     "read_more": "Ler mais",
     "back_to_blog": "Voltar ao blog"
   },
   "footer": {
     "about": "Sobre",
-    "description": "Professora e pesquisadora em literaturas e línguas ibero-românicas. Meu trabalho foca na leitura crítica, no diálogo intercultural e no desenvolvimento do pensamento através da literatura.",
+    "description": "Sou professora de Língua Portuguesa e Espanhola, formada em Letras Vernáculas com Língua Estrangeira Moderna – Espanhol, pela Universidade Federal da Bahia (UFBA), com nível C1 de espanhol certificado pelo Instituto Cervantes. Acredito no ensino de línguas como um espaço de encontro, diálogo e reflexão crítica, em que a linguagem se constrói na relação com o outro e com a cultura.Interesso-me por escrita, língua, discurso e cultura, especialmente em perspectivas interculturais e latino-americanas.",
     "contact": "Contato",
-    "email": "isaelle@example.com",
-    "academic": "Departamento de Letras e Estudos Literários",
+    "email": "isaellecosta123@gmail.com",
     "languages": "Idiomas",
     "copyright": "Todos os direitos reservados"
   },
   "collaboration": {
     "title": "Colaboração Acadêmica",
-    "subtitle": "Estou aberta a colaborações interdisciplinares que promovam o diálogo crítico e a pesquisa em literaturas ibero-românicas.",
+    "subtitle": "Estou aberta a colaborações interdisciplinares e interculturais que promovam o diálogo crítico e a pesquisa.",
     "contact_info": "Informação de Contato",
     "email_label": "Endereço de E-mail",
     "institution_label": "Instituição",
-    "university": "Universidade de Letras e Estudos Literários",
+    "university": "Universidade Federal da Bahia",
     "invitation_title": "Interessado em colaborar?",
     "invitation_text": "Se o seu trabalho se alinha com minhas áreas de pesquisa ou está interessado em projetos conjuntos, não hesite em entrar em contato.",
     "contact_button": "Enviar E-mail",
@@ -67,7 +66,7 @@
     "area1": "Literatura comparada ibero-românica",
     "area2": "Teoria literária e crítica cultural",
     "area3": "Estudos de tradução e transferência cultural",
-    "area4": "Pedagogia de línguas e literaturas",
+    "area4": "Pedagogia de línguas",
     "area5": "Projetos interculturais e diálogo acadêmico"
   }
 }
